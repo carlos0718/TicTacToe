@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.App-section {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*  justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Grid-container {
+  border: 5px solid blue;
+  display: grid;
+  grid-template-columns: 8rem 8rem 8rem;
+  grid-auto-rows: 8rem 8rem 8rem;
+}
+
+.Grid-item {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Btn-reset {
+  margin: 15px 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: blueviolet;
+}
