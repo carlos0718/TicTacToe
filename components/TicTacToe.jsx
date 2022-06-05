@@ -6,7 +6,7 @@ const TicTacToe = () => {
 	const [squares, setSquares] = useState(Array(9).fill(null));
 	const [player, setPlayer] = useState("X");
 	const [winner, setWinner] = useState(null);
-
+	console.log(squares.find((x) => x));
 	const checkForWinner = (squares) => {
 		let combos = {
 			horizontal: [
@@ -66,14 +66,20 @@ const TicTacToe = () => {
 					return <Square key={i} num={i} handleClick={() => handleClick(i)} square={squares} />;
 				})}
 			</div>
-			{winner && (
-				<div style={{ marginButton: "25px" }}>
-					Winner : {winner === "X" ? "Player 1" : "Player 2"}
+			{squares.find((x) => x) !== undefined ? (
+				winner ? (
+					<div style={{ marginButton: "25px" }}>
+						Winner : {winner === "X" ? "Player 1" : "Player 2"}
+						<button className='Btn-reset' onClick={handleReset}>
+							Play Again
+						</button>
+					</div>
+				) : (
 					<button className='Btn-reset' onClick={handleReset}>
 						Play Again
 					</button>
-				</div>
-			)}
+				)
+			) : null}
 		</>
 	);
 };
